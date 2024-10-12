@@ -3,6 +3,8 @@ FROM python:3
 WORKDIR /data
 
 RUN pip install django==3.2
+# Install distutils
+RUN apt-get update && apt-get install -y python3-distutils
 
 COPY . .
 # Adding a delay to wait for database to be ready (optional)
